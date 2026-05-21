@@ -1,0 +1,10 @@
+const { createClient } = require('./node_modules/@supabase/supabase-js');
+const supabase = createClient('http://localhost', 'key');
+console.log('auth.admin exists', !!supabase.auth.admin);
+console.log('admin keys', Object.keys(supabase.auth.admin || {}).sort());
+console.log('createUser type', typeof supabase.auth.admin.createUser);
+console.log('getUserById type', typeof supabase.auth.admin.getUserById);
+console.log('createSession type', typeof supabase.auth.admin.createSession);
+console.log('listUsers type', typeof supabase.auth.admin.listUsers);
+console.log('auth.createSession type', typeof supabase.auth.createSession);
+console.log('auth.verifyOtp type', typeof supabase.auth.verifyOtp);
